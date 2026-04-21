@@ -1,0 +1,33 @@
+# Environment Variables
+.env
+.env.*
+*.env
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Logs & Pids
+logs/
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

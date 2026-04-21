@@ -1,0 +1,417 @@
+.card,
+.project .image_wrapper img {
+    width: 100%;
+}
+
+.card,
+.contactform,
+.project img,
+.skills,
+p {
+    max-width: 100%;
+}
+
+.card,
+.card .left,
+.content,
+.header,
+body {
+    display: flex;
+}
+
+.button,
+.header .item,
+.profile_link {
+    text-decoration: none;
+}
+
+.header .item:hover,
+body {
+    color: #fff;
+}
+
+.button,
+body {
+    font-family: Montserrat;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat/woff/Montserrat-Regular-subset.woff);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: MontserratMedium;
+    src: url(Montserrat/woff/Montserrat-Medium-subset.woff);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url(Montserrat/woff/Montserrat-Bold-subset.woff);
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282f37;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.header {
+    padding: 30px;
+    justify-content: center;
+    font-family: MontserratMedium;
+}
+
+.button,
+.contactform label,
+.line,
+.project .name,
+.title {
+    font-family: MontserratBold;
+}
+
+.header .item {
+    cursor: pointer;
+    color: #9c9c9c;
+    transition: 0.2s;
+    padding: 5px 10px;
+}
+
+.header .active {
+    color: #ececec;
+}
+
+.button,
+.tag,
+.title {
+    color: #ffc86b;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.content {
+    gap: 10px;
+    padding: 0 6%;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.content.large {
+    padding: 0 10%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card .right .profiles::before {
+        display: none;
+    }
+
+    .line {
+        font-size: 50px !important;
+    }
+
+    .line.highlight {
+        font-size: 60px !important;
+    }
+
+    .line.small {
+        font-size: 32px !important;
+    }
+
+    .project .image_wrapper {
+        width: 260px !important;
+    }
+}
+
+.card {
+    padding-bottom: 200px;
+    gap: 30px;
+}
+
+.skills,
+p {
+    width: 700px;
+}
+
+.card .left {
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.card p {
+    line-height: 150%;
+}
+
+.line {
+    font-size: 72px;
+}
+
+.line.highlight {
+    font-size: 90px;
+    color: #ffc86b;
+}
+
+.button {
+    display: inline-block;
+    appearance: none;
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 3px solid #ffc86b;
+    border-radius: 500px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contactform,
+.projects,
+.skill_item {
+    border-radius: 5px;
+}
+
+.line.small {
+    font-size: 44px;
+}
+
+.right .profiles::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
+    width: 4px;
+    background-color: #ffc86b;
+    height: 100px;
+}
+
+.right .profiles {
+    top: 75%;
+    padding-top: 20px;
+}
+
+.profile_link img {
+    width: 40px;
+}
+
+.title {
+    font-size: 42px;
+    margin-top: 50px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 70px);
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.skill_item {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 8px 0;
+    background-color: #44505e;
+}
+
+.skill_item img {
+    width: 35px;
+}
+
+.projects {
+    background-color: #20272e;
+}
+
+.project {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+}
+
+.project .name {
+    font-size: 24px;
+}
+
+.project img {
+    width: 300px;
+    border-radius: 3px;
+}
+
+.hline {
+    width: calc(100% - 30px);
+    left: 15px;
+    height: 1px;
+    background-color: #44505e;
+}
+
+.contactform {
+    margin-top: 50px;
+    background-color: #20272e;
+    padding: 15px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.contactform label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contactform input,
+.contactform textarea {
+    appearance: none;
+    border: none;
+    outline: 0;
+    padding: 10px;
+    background-color: #44505e;
+    color: #fff;
+    border-radius: 5px;
+    width: 600px;
+    max-width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+}
+
+.contactform input[type="submit"] {
+    background-color: #ffc86b;
+    color: #000;
+    font-family: MontserratBold;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+a[href^="mailto:"] {
+    color: #ffa837;
+}
+
+.description {
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.projects .column {
+    flex: 1;
+}
+
+.project .image_wrapper {
+    width: 300px;
+    max-width: 100%;
+    flex: 0 auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.project .image_wrapper img {
+    border-radius: 3px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+body { background-color: #282f37; min-height: 100vh; flex-direction: column; color: #fff; }
+
+form {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    gap: 15px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+form input, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #525c6a;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form input:focus, textarea:focus {
+    background-color: #636f80;
+    transform: scale(1.02);
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #ffc86b;
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: #ffa837;
+    transform: scale(1.05);
+}
+
+/* Optional: reCAPTCHA zentrieren */
+form .g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .description {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+
+    .project .image_wrapper {
+        width: 100% !important;
+    }
+}
