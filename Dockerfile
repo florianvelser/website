@@ -1,5 +1,5 @@
 # --- STAGE 1: Builder ---
-FROM node:18-alpine as builder
+FROM node:24-alpine as builder
 
 # 1. System-Abhängigkeiten
 RUN apk add --no-cache vips-dev fftw-dev build-base python3
