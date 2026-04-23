@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ ENV NODE_ENV=production
 RUN apk add --no-cache dumb-init
 
 COPY package.json package-lock.json* ./
-RUN npm install --production
+RUN npm install --omit=dev
 
 COPY . .
 
