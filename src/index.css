@@ -421,10 +421,13 @@ form .g-recaptcha {
     display: none;
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100vw; 
+    height: 100vh;
+    height: 100dvh; /* Bessere Unterstützung für mobile URL-Leisten (Safari iOS etc.) */
     z-index: 1000;
     overflow-y: auto; /* Aktiviert das Scrollen für das GESAMTE Modal */
     padding: 0;
+    padding-bottom: env(safe-area-inset-bottom); /* iOS SafeArea Respektieren */
     box-sizing: border-box;
     /* Eigener Scrollbar für das gesamte Modal Overlay */
     scrollbar-width: thin;
@@ -474,6 +477,7 @@ form .g-recaptcha {
     align-self: safe center; /* Wenn safe center unterstützt wird und das Element reinpasst -> zentrieren. Ansonsten (z.B. zu hoch) -> start ohne oberen Abschneide-Effekt */
     justify-self: center;
     margin: 5vh auto;
+    margin: 5dvh auto; /* Dvh für modernes Box-Sizing auf Mobiles */
     width: 100%;
     max-width: 900px;
     box-sizing: border-box;
@@ -590,10 +594,12 @@ form .g-recaptcha {
 @media only screen and (max-width: 800px) {
     .modal {
         padding: 0; /* Weniger Abstand außen auf Mobile */
+        padding-bottom: env(safe-area-inset-bottom, 20px); /* Extrapadding für Safari Button bar etc. */
     }
     .modal-content {
         padding: 15px; /* Weniger Abstand innen */
         margin: 5vh auto;
+        margin: 5dvh auto;
         box-sizing: border-box;
         max-width: calc(100vw - 20px);
         width: 100%;
