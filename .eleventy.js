@@ -1,4 +1,17 @@
+const markdownIt = require("markdown-it");
+
 module.exports = function (eleventyConfig) {
+    const md = new markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true
+    });
+
+    eleventyConfig.addFilter("markdown", (content) => {
+        if (!content) return "";
+        return md.renderInline(content);
+    });
+
     // Copy static assets
     eleventyConfig.addPassthroughCopy("src/index.css");
     eleventyConfig.addPassthroughCopy("src/images");
