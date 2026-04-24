@@ -424,7 +424,7 @@ form .g-recaptcha {
     width: 100vw; height: 100vh;
     z-index: 1000;
     overflow-y: auto; /* Aktiviert das Scrollen für das GESAMTE Modal */
-    padding: 0 20px; /* Sorgt für Abstand nach oben und unten beim Scrollen */
+    padding: 0;
     box-sizing: border-box;
     /* Eigener Scrollbar für das gesamte Modal Overlay */
     scrollbar-width: thin;
@@ -450,10 +450,8 @@ form .g-recaptcha {
 .modal-checkbox:checked + .modal {
     display: grid;
     grid-template-columns: 1fr;
-    /* IMPORTANT: Force the grid row to be at least the full viewport height, or taller if content is tall */
-    grid-template-rows: minmax(100vh, max-content);
+    grid-template-rows: minmax(100%, max-content);
 }
-
 
 .modal-backdrop {
     grid-area: 1 / 1;
@@ -463,7 +461,6 @@ form .g-recaptcha {
     z-index: 0;
 }
 
-
 .modal-backdrop label {
     display: block;
     width: 100%;
@@ -472,15 +469,17 @@ form .g-recaptcha {
 }
 
 .modal-content {
-    position: relative;
     grid-area: 1 / 1;
     align-self: start;
+    align-self: safe center; /* Wenn safe center unterstützt wird und das Element reinpasst -> zentrieren. Ansonsten (z.B. zu hoch) -> start ohne oberen Abschneide-Effekt */
     justify-self: center;
-    margin: 60px auto;
-    max-width: 900px;
+    margin: 5vh auto;
     width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
     background: #20272e;
     padding: 50px;
+    z-index: 1001;
     border-radius: 12px;
     /* margin replaced by 60px auto above */
     color: #ececec;
@@ -541,7 +540,7 @@ form .g-recaptcha {
     max-height: 450px;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 .modal-header h2 {
@@ -590,24 +589,42 @@ form .g-recaptcha {
 
 @media only screen and (max-width: 800px) {
     .modal {
-        padding: 20px 10px; /* Weniger Abstand außen auf Mobile */
+        padding: 0; /* Weniger Abstand außen auf Mobile */
     }
     .modal-content {
-        padding: 25px; /* Weniger Abstand innen */
-        margin: 30px auto;
-        margin: 30px auto;
+        padding: 15px; /* Weniger Abstand innen */
+        margin: 5vh auto;
+        box-sizing: border-box;
+        max-width: calc(100vw - 20px);
+        width: 100%;
+    }
+    .modal-header {
+        gap: 15px;
+        padding-bottom: 15px;
     }
     .modal-header h2 {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    .modal-body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .modal-body strong {
+        font-size: 18px;
     }
     /* Angepasster Close-Button für Mobile, damit er nicht abgeschnitten wird */
     .modal-close {
-        top: 10px; 
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
+        top: 5px; 
+        right: 5px;
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
         border-width: 2px;
+    }
+    
+    .modal-content img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -618,7 +635,6 @@ body:has(.modal-checkbox:checked) {
 
 .modal-content ul {
     list-style-position: outside; /* Behält den sauberen Text-Umbruch bei */
-    margin-left: 20px;            /* Schiebt die Liste nach rechts */
     padding-left: 20px;           /* Stellt sicher, dass Platz für die Punkte ist */
 }
 
