@@ -1,0 +1,64 @@
+---
+permalink: /projects.html
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="preload" href="./Montserrat/woff/Montserrat-Regular-subset.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./Montserrat/woff/Montserrat-Medium-subset.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./Montserrat/woff/Montserrat-Bold-subset.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="header">
+        <a class="item" href="/">Home</a>
+        <a class="item" href="about.html">About</a>
+        <div class="item active">Projects</div>
+        <a class="item" href="contact.html">Contact</a>
+    </div>
+    <div class="content">
+        <div class="card">
+            <div class="left">
+                <div class="title">Projects</div>
+                <div class="projects">
+                    {% for project in collections.projects %}
+                        <label for="modal-{{ loop.index }}" class="project-trigger">
+                            <div class="project">
+                                <div class="image_wrapper"><img src="{{ project.data.image }}" alt=""></div>
+                                <div class="column">
+                                    <div class="name">{{ project.data.title }}</div>
+                                    <div class="description">{{ project.data.description }}</div>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="modal-{{ loop.index }}" class="modal-checkbox">
+                        <div class="modal">
+                            <div class="modal-backdrop"><label for="modal-{{ loop.index }}"></label></div>
+                            <div class="modal-content">
+                                <label for="modal-{{ loop.index }}" class="modal-close">&times;</label>
+                                <div class="modal-header">
+                                    <img src="{{ project.data.image }}" alt="">
+                                    <h2>{{ project.data.title }}</h2>
+                                </div>
+                                <div class="modal-body">
+                                    {{ project.content | safe }}
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if not loop.last %}
+                            <div class="hline"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

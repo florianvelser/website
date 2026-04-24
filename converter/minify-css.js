@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const CleanCSS = require('clean-css');
 
-const inputPath = path.resolve('public', 'index.css');
-const outputPath = path.resolve('public', 'index.css');
+const inputPath = path.resolve('src', 'index.css');
+const outputPath = path.resolve('src', 'index.css');
 
 const css = fs.readFileSync(inputPath, 'utf8');
 const output = new CleanCSS({}).minify(css);

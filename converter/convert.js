@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const SRC = './public/projects';
-const OUT_AVIF = './public/avif';
-const OUT_T_AVIF = './public/thumbs_avif';
+const SRC = './src/projects';
+const OUT_AVIF = './src/avif';
+const OUT_T_AVIF = './src/thumbs_avif';
 
 const QUALITY = 70;
 const THUMB_SIZES = [320, 640, 1280];
