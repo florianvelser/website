@@ -240,6 +240,7 @@ p {
 
 .projects {
     background-color: #20272e;
+    overflow: hidden;
 }
 
 .project {
