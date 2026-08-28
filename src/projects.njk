@@ -29,7 +29,7 @@ permalink: /projects.html
                     {% for project in collections.projects %}
                         <label for="modal-{{ loop.index }}" class="project-trigger">
                             <div class="project">
-                                <div class="image_wrapper"><img src="{{ project.data.image }}" alt=""></div>
+                                <div class="image_wrapper" style="background-image: url('{{ project.data.image }}')"></div>
                                 <div class="column">
                                     <div class="name">{{ project.data.title }}</div>
                                     <div class="description">{{ project.data.description | markdown | safe }}</div>
