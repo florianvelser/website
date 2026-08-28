@@ -326,7 +326,15 @@ a[href^="mailto:"] {
     overflow: hidden;
 }
 
-.project .image_wrapper img {
+.project .image_wrapper {
+    width: 300px;
+    max-width: 100%;
+    flex: 0 auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 3px;
 }
 
