@@ -1,8 +1,7 @@
 ---
 title: "Automotive IoT: Reverse-Engineering & Telemetry Integration"
-image: "projects/automotive_iot.png"
+image: "projects/images/automotive_iot.png"
 description: "Extracted real-time vehicle telemetry by reverse-engineering a proprietary CAN-Bus network through a 100% reversible hardware harness. Developed a secure WireGuard VPN and MQTT pipeline to stream live diagnostics into a Home Assistant smart dashboard, leveraging LLMs for automated payload analysis."
-order: 2
 ---
 
 <p><strong>Short description:</strong></p>

@@ -1,3 +1,18 @@
 {
-  "permalink": false
+  "permalink": false,
+  "projectOrder": [
+    "desk-display.md",
+    "infrastructure.md",
+    "canbus-mqtt.md",
+    "er-editor.md",
+    "lamp.md",
+    "spotify-stats.md",
+    "fire.md",
+    "terminal.md",
+    "pwa.md",
+    "wikipedia-redesign.md",
+    "mail-client.md",
+    "file-explorer.md",
+    "music-player.md"
+  ]
 }

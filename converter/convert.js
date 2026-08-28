@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const SRC = './src/projects';
+const SRC = './src/projects/images';
 const OUT_AVIF = './src/avif';
 const OUT_T_AVIF = './src/thumbs_avif';
 

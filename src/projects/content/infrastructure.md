@@ -1,8 +1,7 @@
 ---
 title: "CI/CD Pipeline and Infrastructure as Code"
-image: "projects/infrastructure.png"
+image: "projects/images/infrastructure.png"
 description: "Automated a full CI/CD pipeline using GitHub Actions and Watchtower for containerized deployments. I modularized the infrastructure by migrating to a version-controlled 'Service Include' architecture, significantly reducing manual overhead and improving system maintainability."
-order: 1
 ---
 
 <p><strong>Short description:</strong></p>
