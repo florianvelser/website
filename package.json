@@ -1,7 +1,4 @@
 {
-    "dependencies": {
-        "express": "^4.21.2"
-    },
     "name": "website",
     "version": "1.0.0",
     "description": "this is the source code for my website",
