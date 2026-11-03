@@ -27,6 +27,11 @@ RUN npm run build
 # --- STAGE 2: Runtime ---
 FROM nginxinc/nginx-unprivileged:alpine
 
+# Sicherheitsupdates der Alpine-Pakete einspielen
+USER root
+RUN apk upgrade --no-cache
+USER 101
+
 # Eigene Config
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
